@@ -17,9 +17,6 @@ namespace engine {
         void tick(GameEngine*) override;
         protected:
         using Sprite::Sprite;
-        private:
-        const StaticSprite& operator=(const StaticSprite& other) = delete;
-        StaticSprite(const StaticSprite& other) = delete;
     };
 }
 

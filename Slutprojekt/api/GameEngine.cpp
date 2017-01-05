@@ -36,7 +36,7 @@ namespace engine {
     }
     
     GameEngine::GameEngine(const string windowTitle, int fps): fps(fps), resourceManager(), levelManager(), collisionDetector(){
-        graphics.setWindowTitle(windowTitle);
+        graphics.load(windowTitle);
     }
     
     void GameEngine::run(){

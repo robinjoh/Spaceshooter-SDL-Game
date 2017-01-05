@@ -32,8 +32,6 @@ private:
     SDL_Rect rect;
     std::function<void()> onReleaseCallback;
     std::function<void()> onPressedCallback;
-    const ButtonSprite& operator=(const ButtonSprite& other) = delete;
-    ButtonSprite(const ButtonSprite& other) = delete;
 };
 }
 

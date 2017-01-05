@@ -23,8 +23,6 @@ namespace engine {
     private:
         int scrollingOffset;
         ScrollingDirection scrollingDirection;
-        ScrollingBackgroundSprite(const ScrollingBackgroundSprite&other) = delete;
-        const ScrollingBackgroundSprite& operator=(const ScrollingBackgroundSprite& other) = delete;
     };
     
 }

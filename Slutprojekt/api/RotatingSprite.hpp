@@ -20,13 +20,10 @@ namespace engine {
         void draw();
         static std::shared_ptr<RotatingSprite> getInstance(const std::string&, SDL_Rect, SDL_Point, int);
     protected:
-        void rotate();
         RotatingSprite(const std::string&, SDL_Rect, SDL_Point, int);
     private:
         int rotationSpeed;
         int currentAngle;
-        RotatingSprite(const Sprite& other) = delete;
-        const RotatingSprite& operator=(const RotatingSprite& other) = delete;
     };
 }
 

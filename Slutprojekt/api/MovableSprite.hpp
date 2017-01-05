@@ -49,8 +49,6 @@ namespace engine {
         bool reversing;
         bool turningLeft;
         bool turningRight;
-        const MovableSprite& operator=(const MovableSprite& other) = delete;
-        MovableSprite(const MovableSprite& other) = delete;
         SDL_Point isOutOfBounds();
         SDL_Point goingOutOfBounds();
     };

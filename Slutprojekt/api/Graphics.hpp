@@ -16,19 +16,19 @@
 namespace engine{
 class Graphics {
 public:
-    Graphics();
     ~Graphics();
     SDL_Renderer* getRenderer() const;
     void showWindow();
     void setWindowTitle(const std::string& title);
     void setWindowSize(const SDL_Rect& rect);
-    bool loadLibraries();
+    void load(const std::string&);
     SDL_Rect getScreenSize();
     TTF_Font* getFont(int ptSize);
 private:
     bool loadSDL();
     bool loadIMG();
     bool loadTTF();
+    bool loadLibraries();
     SDL_Renderer* renderer;
     SDL_Window* window;
     SDL_Rect windowRect;

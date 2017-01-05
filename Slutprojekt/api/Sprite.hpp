@@ -42,6 +42,8 @@ namespace engine {
         const std::string texturePath;
         SDL_Point currentPosition;
         SDL_Rect rectangle;
+        Sprite(const Sprite&)=delete;
+        const Sprite& operator=(const Sprite&) = delete;
     };
 }
 #endif /* Sprite_hpp */

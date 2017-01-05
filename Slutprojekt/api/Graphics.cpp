@@ -14,23 +14,6 @@ using namespace std;
 
 namespace engine {
     
-    Graphics::Graphics(){
-        if(!loadLibraries()){
-            throw runtime_error("Could not load libraries");
-        }
-        SDL_DisplayMode current;
-        SDL_GetCurrentDisplayMode(0, &current);
-        windowRect = {0,0,current.w, current.h};
-        window = SDL_CreateWindow(DEFAULT_WINDOW_TITLE.c_str(), windowRect.x, windowRect.y, windowRect.w, windowRect.h, SDL_WINDOW_HIDDEN);
-        if(window == nullptr){
-            throw runtime_error("Unable to create window");
-        }
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
-        if(renderer == nullptr){
-            throw runtime_error("Unable to create renderer.");
-        }
-    }
-    
     Graphics::~Graphics(){
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);
@@ -46,6 +29,24 @@ namespace engine {
     
     SDL_Renderer* Graphics::getRenderer() const {
         return renderer;
+    }
+
+    
+    void Graphics::load(const string& windowTitle) {
+        if(!loadLibraries()){
+            throw runtime_error("Could not load libraries");
+        }
+        SDL_DisplayMode current;
+        SDL_GetCurrentDisplayMode(0, &current);
+        windowRect = {0,0,current.w, current.h};
+        window = SDL_CreateWindow(windowTitle.c_str(), windowRect.x, windowRect.y, windowRect.w, windowRect.h, SDL_WINDOW_HIDDEN);
+        if(window == nullptr){
+            throw runtime_error("Unable to create window");
+        }
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
+        if(renderer == nullptr){
+            throw runtime_error("Unable to create renderer.");
+        }
     }
     
     bool Graphics::loadLibraries() {

@@ -27,8 +27,6 @@ namespace engine {
         const int CARET_BLINKING_INTERVAL = 50;
         SDL_Rect textBox;
         SDL_Color textBoxColor;
-        const TextFieldSprite& operator=(const TextFieldSprite& other) = delete;
-        TextFieldSprite(const TextFieldSprite& other) = delete;
     };
 }
 

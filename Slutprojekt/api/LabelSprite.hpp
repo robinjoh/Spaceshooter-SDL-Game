@@ -19,8 +19,6 @@ class LabelSprite: public Labeled {
     void draw();
     LabelSprite(const std::string&, SDL_Rect, int font, SDL_Color, std::string);
     private:
-    const LabelSprite& operator=(const LabelSprite& other) = delete;
-    LabelSprite(const LabelSprite& other) = delete;
 };
 
 }

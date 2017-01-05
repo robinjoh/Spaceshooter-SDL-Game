@@ -32,8 +32,6 @@ namespace engine {
         SDL_Rect currentRect;
         std::function<void()> onFinishCallback;
         std::vector<SDL_Rect> sourceRects;
-        AnimatedSprite(const AnimatedSprite& other) = delete;
-        const AnimatedSprite& operator=(const AnimatedSprite& other) = delete;
     };
 }
 
